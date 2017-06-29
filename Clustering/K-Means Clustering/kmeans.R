@@ -1,6 +1,6 @@
 # K-Means Clustering
 
-# Importing the dataset
+#Data Set
 dataset = read.csv('Mall_Customers.csv')
 dataset = dataset[4:5]
 
@@ -16,7 +16,7 @@ dataset = dataset[4:5]
 # training_set = scale(training_set)
 # test_set = scale(test_set)
 
-# Using the elbow method to find the optimal number of clusters
+# Elbow Method
 set.seed(6)
 wcss = vector()
 for (i in 1:10) wcss[i] = sum(kmeans(dataset, i)$withinss)
@@ -32,7 +32,7 @@ set.seed(29)
 kmeans = kmeans(x = dataset, centers = 5)
 y_kmeans = kmeans$cluster
 
-# Visualising the clusters
+# Visualisation
 library(cluster)
 clusplot(dataset,
          y_kmeans,
